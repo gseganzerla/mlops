@@ -1,0 +1,19 @@
+version : '3.9'
+
+services:
+  flask:
+    build: .
+    container_name: flask-application
+    volumes:
+      - ./:/app
+    ports:
+      - 5000:5000
+
+    command: [ "poetry", "run", "python", "app.py" ]
+
+    networks:
+      - mlops
+
+networks:
+  mlops:
+    driver: bridge
