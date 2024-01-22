@@ -8,11 +8,25 @@ services:
       - ./:/app
     ports:
       - 5000:5000
+    expose:
+      - 5000
 
     command: [ "poetry", "run", "python", "app.py" ]
 
     networks:
       - mlops
+
+  classification:
+    build: .
+    container_name: classification-mlops
+    volumes:
+      - ./:/app
+    ports:
+      - 5001:5001
+    expose:
+      - 5001
+
+    command: [ "poetry", "run", "python", "classification.py" ]
 
 networks:
   mlops:

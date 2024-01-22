@@ -14,8 +14,6 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip install poetry
 
-EXPOSE 5000
-
 COPY . .
 
 # RUN poetry shell
