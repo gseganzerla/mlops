@@ -28,6 +28,18 @@ services:
 
     command: [ "poetry", "run", "python", "classification.py" ]
 
+  regression:
+    build: .
+    container_name: regression-mlops
+    volumes:
+      - ./:/app
+    ports:
+      - 5002:5002
+    expose:
+      - 5002
+
+    command: [ "poetry", "run", "python", "regression.py" ]
+
 networks:
   mlops:
     driver: bridge

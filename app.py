@@ -5,8 +5,14 @@ app = Flask(__name__)
 
 
 @app.route("/classification")
-def hello():
-    return requests.get('http://127.0.0.1:5001').json()
+def classification():
+    response = requests.get('http://127.0.0.1:5001').json()
+    return response
+
+@app.route("/regression")
+def regression():
+    response = requests.get('http://127.0.0.1:5002').json()
+    return response
 
 
 if __name__ == '__main__':
