@@ -27,10 +27,12 @@ services:
       - 5001
 
     command: [ "poetry", "run", "python", "classification.py" ]
+    networks:
+      - mlops
 
-  regression:
+  clusterization:
     build: .
-    container_name: regression-mlops
+    container_name: clusterization-mlops
     volumes:
       - ./:/app
     ports:
@@ -38,7 +40,9 @@ services:
     expose:
       - 5002
 
-    command: [ "poetry", "run", "python", "regression.py" ]
+    command: [ "poetry", "run", "python", "clusterization.py" ]
+    networks:
+      - mlops
 
   frontend:
     image: node

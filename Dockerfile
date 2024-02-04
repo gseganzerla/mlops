@@ -17,4 +17,4 @@ RUN pip install poetry
 COPY . .
 
 # RUN poetry shell
-RUN poetry install
+RUN poetry install --no-root
