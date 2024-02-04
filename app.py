@@ -11,7 +11,6 @@ default_headers = {'Content-Type': 'application/json'}
 
 @app.route("/classification", methods=['POST'])
 def classification():
-    print('oioioo')
     data = request.get_json()
     response = requests.post('http://classification:5001', json=data, headers=default_headers)
 
