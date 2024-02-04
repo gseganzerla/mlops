@@ -13,7 +13,7 @@ def classification():
     model, df = model_loader(data, 'classification')
     result = model.predict(df)[0]
     
-    return {"mode": "classification", 'predictionValue': int(result), 'predictionName': classification_return(result)}
+    return {"model": "classification", 'predictionValue': int(result), 'predictionName': classification_return(result)}
 
 
 if __name__ == '__main__':
