@@ -44,18 +44,6 @@ services:
     networks:
       - mlops
 
-  frontend:
-    image: node
-    container_name: frontend
-    volumes:
-      - ./:/app
-    ports:
-      - 3000:3000
-    expose:
-      - 3000
-    
-    # command: [""]
-
 networks:
   mlops:
     driver: bridge
