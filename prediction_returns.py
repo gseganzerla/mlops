@@ -9,9 +9,9 @@ def clusterization_return(value):
     data = {}
     data['risks'] = {}
 
-    low_risk = 16.98
-    medium_risk = 36.14
-    high_risk = 9.85
+    low_risk = 9.85
+    medium_risk = 16.98
+    high_risk = 36.14
 
     if value == 0:
         data['groupName'] = 'Low risk of fraud'
